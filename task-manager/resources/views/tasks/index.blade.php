@@ -40,6 +40,7 @@
                                     <th>Название</th>
                                     <th>Статус</th>
                                     <th>Дата создания</th>
+                                    <th>Дата изменения</th>
                                     <th class="text-end">Действия</th>
                                 </tr>
                             </thead>
@@ -58,6 +59,7 @@
                                             @endif
                                         </td>
                                         <td>{{ $task->created_at->format('d.m.Y H:i') }}</td>
+                                        <td>{{ $task->updated_at->format('d.m.Y H:i') }}</td>
                                         <td class="text-end">
                                             <div class="btn-group" role="group">
                                                 <a href="{{ route('tasks.show', $task) }}"
@@ -81,7 +83,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5" class="text-center">Задачи не найдены.</td>
+                                        <td colspan="6" class="text-center">Задачи не найдены.</td>
                                     </tr>
                                 @endforelse
                             </tbody>
